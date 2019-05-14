@@ -1,0 +1,18 @@
+.error {
+	color: red;
+}
+
+.contactForm {
+	background: #FCD800;
+}
+div {
+	display: block;
+}
+
+body {
+	height: 100%;
+	font-family: Intro,"Trebuchet MS",Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	line-height: 1.375em;
+	color: #000000;
+}

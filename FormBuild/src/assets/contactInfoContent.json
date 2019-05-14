@@ -1,0 +1,78 @@
+{
+	"customerInfo": [
+		{
+			"labelName": "First Name",
+			"group": "contactInfo",
+			"type": "text",
+			"regExp": "^[A-Za-z\\' \\-]*$",
+			"value": "",
+			"required": "true",
+			"errorMessage" : "Please enter only letters in this field."
+		},
+		{
+			"labelName": "Last Name",
+			"group": "contactInfo",
+			"type": "text",
+			"regExp": "^[a-z ,.'-A-Z]+$",
+			"value": "",
+			"required": "true",
+			"errorMessage" : "Please enter only letters in this field."
+		},
+		{
+			"labelName": "Email",
+			"group": "contactInfo",
+			"type": "text",
+			"regExp": "^([A-Za-z0-9])+([_-.])?([A-Za-z0-9])+@([A-Za-z0-9])+.([A-Za-z]{2,3})$",
+			"value": "",
+			"required": "true",
+			"errorMessage" : "Please enter a valid email address."
+		},
+		{
+			"labelName": "Phone",
+			"group": "contactInfo",
+			"type": "text",
+			"regExp": "^([(]?[0-9][0-9][0-9][)]? ?[0-9][0-9][0-9][-]?[0-9][0-9][0-9][0-9])$",
+			"value": "",
+			"required": "true",
+			"errorMessage" : "Please enter valid phone number in this field."
+		},
+		{
+			"labelName": "Company",
+			"group": "companyInfo",
+			"type": "text",
+			"regExp": "^[a-z ,.'-A-Z]+$",
+			"value": "",
+			"required": "true",
+			"errorMessage" : "Please enter a valid email address."
+		},
+		{
+			"labelName": "Title",
+			"group": "companyInfo",
+			"type": "text",
+			"regExp": "^[a-z ,.'-0-9A-Z]+$",
+			"value": "",
+			"required": "true",
+			"errorMessage" : "Please enter a valid email address."
+		},
+		{
+			"labelName": "Industry",
+			"group": "companyInfo",
+			"type": "select",
+			"regExp": null,
+			"value": "",
+			"required": "true",
+			"errorMessage" : "Please select a value from the dropdown.",
+			"optionValues": ["Collections", "Automotive", "Banking"]
+		},
+		{
+			"labelName": "State",
+			"group": "companyInfo",
+			"type": "select",
+			"regExp": null,
+			"value": "",
+			"required": "true",
+			"errorMessage" : "Please select a value from the dropdown.",
+			"optionValues": [ "Illinois", "Texas", "Michigan" ]
+		}
+	]
+}

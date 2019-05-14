@@ -1,0 +1,30 @@
+<form [formGroup]="contactUs" (ngSubmit)="onSubmit()" class="contactForm row">
+	<div class="col-xl-6 col-lg-6 col-sm-6 col-xs-6" *ngFor="let data of groupedCollection">
+		<div *ngFor="let prop of data">
+			<div class="form-group">
+				<label for="{{prop.labelName}}">{{prop.labelName}}:<span class="asterisk">*</span></label>
+				<div [ngSwitch]="prop.type">
+					<input *ngSwitchCase="['text', 'email', 'phone'].includes(prop.type) ? prop.type : ''" [type]="prop.type" [formControlName]="prop.labelName" [placeholder]="prop.labelName">
+					<input *ngSwitchCase="'textarea'" [type]="prop.type" [formControlName]="prop.labelName" [placeholder]="prop.labelName">
+					<select *ngSwitchCase="'select'" [formControlName]="prop.labelName">
+						<option *ngFor="let option of prop.optionValues" [value]="option">
+							{{ option }}
+						</option>
+					</select>
+				</div>
+				<div class="error" *ngIf="contactUs.get(prop.labelName).invalid && (contactUs.get(prop.labelName).dirty || contactUs.get(prop.labelName).touched)">
+					<span *ngIf="contactUs.get(prop.labelName).errors.required">
+						This is a required field.
+					</span>
+					<span *ngIf="hasError(prop)">
+						{{ prop.errorMessage }}
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-xl-6 col-lg-6 col-sm-12">
+		<button type="submit">Submit</button>
+	</div>
+</form>
+<pre> {{ contactUs.value | json }}</pre>
